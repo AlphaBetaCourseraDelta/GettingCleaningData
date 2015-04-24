@@ -33,11 +33,11 @@ run_analysis <- function(){
   
   ## Do #2, remove all columns that are not ".mean()" or ".std()"
   ## I am removing .meanFreq() columns, according to my understanding of #2.
-  cleanTidyData<-select(allData, subjectNumber, contains("mean"),contains("std"), activityNumber)
+  cleanTidyData<-select(allData, subjectNumber, contains(".mean."),contains(".std."), activityNumber)
   
   ## Do #3, change the activity code (1-6) for the descriptive Activity Name (e.g., "WALKING")
   cleanTidyData<-mutate(cleanTidyData, activityDescription=as.character(activityDefinition[activityNumber,2]))
-  cleanTidyData<-select(cleanTidyData,-activityNumber)
+  cleanTidyData<-select(cleanTidyData,-activityNumber, -contains("meanFreq"),-contains("gravityMean"))
   
   ## Do #4, change the variable names to be more descriptive.
   ## I'm using camelCase because I find long lower case names to be unintelligible.
@@ -57,13 +57,14 @@ run_analysis <- function(){
   descriptiveNames <- lapply(descriptiveNames, function(x){gsub("fBodyBody","Frequency",x)})
   descriptiveNames <- lapply(descriptiveNames, function(x){gsub("tBody","Time",x)})
   descriptiveNames <- lapply(descriptiveNames, function(x){gsub("fBody","Frequency",x)})
-  descriptiveNames <- lapply(descriptiveNames, function(x){gsub("fBodyBody","Frequency",x)})
+  descriptiveNames <- lapply(descriptiveNames, function(x){gsub("tGravity","TimeGravity",x)})
   descriptiveNames <- lapply(descriptiveNames, function(x){gsub("Acc","Accelerometer",x)})
   descriptiveNames <- lapply(descriptiveNames, function(x){gsub("Gyro","Gyroscope",x)})
   descriptiveNames <- lapply(descriptiveNames, function(x){gsub("Mag","Magnitude",x)})
   descriptiveNames <- lapply(descriptiveNames, function(x){gsub("....X","XAxis",x)})
   descriptiveNames <- lapply(descriptiveNames, function(x){gsub("....Y","YAxis",x)})
   descriptiveNames <- lapply(descriptiveNames, function(x){gsub("....Z","ZAxis",x)})
+  descriptiveNames <- lapply(descriptiveNames, function(x){gsub("Magnitude...","Magnitude",x)})
   
   names(cleanTidyData) <- descriptiveNames
   
