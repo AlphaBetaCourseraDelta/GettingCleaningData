@@ -20,6 +20,7 @@ The remainder of the variables are the average of the values in the original dat
 * whether it is the time signal (Time) or the Fast Fourier Transform of a time signal (Frequency)
 * the measurement
 * the axis of measurement when it is applicable
+
 for example, the "stDevTimeGyroscopeYAxis" column is the average of the standard deviations of the time domain signals from the gyroscope on the Y axis.  The table below shows the 10 types of measurements, whether they have both time and FFT, and whether they were measured on multiple dimensions
 
 Measurement | Description | Time or FFT(Frequency)|Multiple Axes
