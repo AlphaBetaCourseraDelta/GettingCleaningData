@@ -26,24 +26,24 @@ run_analysis <- function(){
   testList <- list(testSubjects,testData,testActivity)
   trainList <- list(trainSubjects,trainData,trainActivity)
   
-  ## Do #1. Merge training and test sets into  giant data set. 
+  ## Do #1. Merge training and test sets into giant data set. 
   testData <- join_all(testList)
   trainData<- join_all(trainList)
   allData<-rbind(testData,trainData)
   
   ## Do #2, remove all columns that are not ".mean()" or ".std()"
   ## I am removing .meanFreq() columns, according to my understanding of #2.
-  usefulTestData<-select(allData, idnum, subjectNumber, contains("mean"),contains("std"), activityNumber)
-
+  cleanTidyData<-select(allData, subjectNumber, contains("mean"),contains("std"), activityNumber)
+  
   ## Do #3, change the activity code (1-6) for the descriptive Activity Name (e.g., "WALKING")
-  usefulTestData<-mutate(usefulTestData, activityDescription=as.character(activityDefinition[activityNumber,2]))
-  usefulTestData<-select(usefulTestData,-activityNumber)
+  cleanTidyData<-mutate(cleanTidyData, activityDescription=as.character(activityDefinition[activityNumber,2]))
+  cleanTidyData<-select(cleanTidyData,-activityNumber)
   
   ## Do #4, change the variable names to be more descriptive.
   ## I'm using camelCase because I find long lower case names to be unintelligible.
   ## Mostly, it's just a lot of substitutions
-  usefulNames <- names(usefulTestData)
-  usefulNames <- lapply(usefulNames,
+  descriptiveNames <- names(cleanTidyData)
+  descriptiveNames <- lapply(descriptiveNames,
                         function(x){
                           if(grepl("mean",x)){
                             x<-paste("average",x,sep="");
@@ -54,21 +54,21 @@ run_analysis <- function(){
                           else{x}
                         }
   )
-  usefulNames <- lapply(usefulNames, function(x){gsub("fBodyBody","Frequency",x)})
-  usefulNames <- lapply(usefulNames, function(x){gsub("tBody","Time",x)})
-  usefulNames <- lapply(usefulNames, function(x){gsub("fBody","Frequency",x)})
-  usefulNames <- lapply(usefulNames, function(x){gsub("fBodyBody","Frequency",x)})
-  usefulNames <- lapply(usefulNames, function(x){gsub("Acc","Accelerometer",x)})
-  usefulNames <- lapply(usefulNames, function(x){gsub("Gyro","Gyroscope",x)})
-  usefulNames <- lapply(usefulNames, function(x){gsub("Mag","Magnitude",x)})
-  usefulNames <- lapply(usefulNames, function(x){gsub("....X","XAxis",x)})
-  usefulNames <- lapply(usefulNames, function(x){gsub("....Y","YAxis",x)})
-  usefulNames <- lapply(usefulNames, function(x){gsub("....Z","ZAxis",x)})
+  descriptiveNames <- lapply(descriptiveNames, function(x){gsub("fBodyBody","Frequency",x)})
+  descriptiveNames <- lapply(descriptiveNames, function(x){gsub("tBody","Time",x)})
+  descriptiveNames <- lapply(descriptiveNames, function(x){gsub("fBody","Frequency",x)})
+  descriptiveNames <- lapply(descriptiveNames, function(x){gsub("fBodyBody","Frequency",x)})
+  descriptiveNames <- lapply(descriptiveNames, function(x){gsub("Acc","Accelerometer",x)})
+  descriptiveNames <- lapply(descriptiveNames, function(x){gsub("Gyro","Gyroscope",x)})
+  descriptiveNames <- lapply(descriptiveNames, function(x){gsub("Mag","Magnitude",x)})
+  descriptiveNames <- lapply(descriptiveNames, function(x){gsub("....X","XAxis",x)})
+  descriptiveNames <- lapply(descriptiveNames, function(x){gsub("....Y","YAxis",x)})
+  descriptiveNames <- lapply(descriptiveNames, function(x){gsub("....Z","ZAxis",x)})
   
-  names(usefulTestData) <- usefulNames
+  names(cleanTidyData) <- descriptiveNames
   
   ## Do #5 - the data is grouped, the averages are found
   ## the result is written to a file called "outputdata.csv"
-  smallTidyData <- usefulTestData %>% group_by(subjectNumber,activityDescription) %>% summarise_each(funs(mean),-idnum)
+  smallTidyData <- cleanTidyData %>% group_by(subjectNumber,activityDescription) %>% summarise_each(funs(mean))
   write.table(smallTidyData,"outputdata.txt", row.name=FALSE)
 }
