@@ -36,4 +36,137 @@ GyroscopeMagnitude|magnitude of the gyroscope signal due to body movement calcul
 GravityAccelerometer|signal from the accelerometer due to gravity|Time Only|yes
 GravityAccelerometerMagnitude|magnitude of the signal from the accelerometer due to gravity calculated by the Euclidian norm|Time Only
 
-There are a total of 66 measurement columns.
+There are a total of 66 measurement columns.  They're as follows:
+**averageTimeAccelerometerXAxis**
+average of the means of the time signal from the accelerometer due to body movement on the X axis
+**averageTimeAccelerometerYAxis**
+average of the means of the time signal from the accelerometer due to body movement on the Y axis
+**averageTimeAccelerometerZAxis**
+average of the means of the time signal from the accelerometer due to body movement on the Z axis
+**averageTimeGravityAccelerometerXAxis**
+average of the means of the time signal from the accelerometer due to gravity on the X axis
+**averageTimeGravityAccelerometerYAxis**
+average of the means of the time signal from the accelerometer due to gravity on the Y axis
+**averageTimeGravityAccelerometerZAxis**
+average of the means of the time signal from the accelerometer due to gravity on the Z axis
+**averageTimeAccelerometerJerkXAxis**
+average of the means of the jerk signal from the accelerometer due to body movement on the X axis
+**averageTimeAccelerometerJerkYAxis**
+average of the means of the jerk signal from the accelerometer due to body movement on the Y axis
+**averageTimeAccelerometerJerkZAxis**
+average of the means of the jerk signal from the accelerometer due to body movement on the Z axis
+**averageTimeGyroscopeXAxis**
+average of the means of the time signal from the gyroscope due to body movement on the X axis
+**averageTimeGyroscopeYAxis**
+average of the means of the time signal from the gyroscope due to body movement on the Y axis
+**averageTimeGyroscopeZAxis**
+average of the means of the time signal from the gyroscope due to body movement on the Z axis
+**averageTimeGyroscopeJerkXAxis**
+average of the means of the jerk signal fom the gyroscope due to body movement on the X axis
+**averageTimeGyroscopeJerkYAxis**
+average of the means of the jerk signal fom the gyroscope due to body movement on the Y axis
+**averageTimeGyroscopeJerkZAxis**
+average of the means of the jerk signal fom the gyroscope due to body movement on the Z axis
+**averageTimeAccelerometerMagnitude**
+average of the means of the magnitude of the accelerometer signal due to body movement calculated by the Euclidian norm
+**averageTimeGravityAccelerometerMagnitude**
+average of the means of the magnitude of the signal from the accelerometer due to gravity calculated by the Euclidian norm
+**averageTimeAccelerometerJerkMagnitude**
+average of the means of the magnitude of the accelerometer jerk signal due to body movement using the Euclidian norm
+**averageTimeGyroscopeMagnitude**
+average of the means of the magnitude of the gyroscope signal due to body movement calculated by the Euclidian norm
+**averageTimeGyroscopeJerkMagnitude**
+average of the means of the magnitude of the gyroscope jerk signal due to body movement calculated by the Euclidian norm
+**averageFrequencyAccelerometerXAxis**
+average of the means of the Fast Fourier Transform of the time signal from the accelerometer due to body movement on the X axis
+**averageFrequencyAccelerometerYAxis**
+average of the means of the Fast Fourier Transform of the time signal from the accelerometer due to body movement on the Y axis
+**averageFrequencyAccelerometerZAxis**
+average of the means of the Fast Fourier Transform of the time signal from the accelerometer due to body movement on the Z axis
+**averageFrequencyAccelerometerJerkXAxis**
+average of the means of the Fast Fourier Transform of the jerk signal from the accelerometer due to body movement on the X axis
+**averageFrequencyAccelerometerJerkYAxis**
+average of the means of the Fast Fourier Transform of the jerk signal from the accelerometer due to body movement on the Y axis
+**averageFrequencyAccelerometerJerkZAxis**
+average of the means of the Fast Fourier Transform of the jerk signal from the accelerometer due to body movement on the Z axis
+**averageFrequencyGyroscopeXAxis**
+average of the means of the Fast Fourier Transform of the time signal from the gyroscope due to body movement on the X axis
+**averageFrequencyGyroscopeYAxis**
+average of the means of the Fast Fourier Transform of the time signal from the gyroscope due to body movement on the Y axis
+**averageFrequencyGyroscopeZAxis**
+average of the means of the Fast Fourier Transform of the time signal from the gyroscope due to body movement on the Z axis
+**averageFrequencyAccelerometerMagnitude**
+average of the means of the Fast Fourier Transform of the magnitude of the accelerometer signal due to body movement calculated by the Euclidian norm
+**averageFrequencyAccelerometerJerkMagnitude**
+average of the means of the Fast Fourier Transform of the magnitude of the accelerometer jerk signal due to body movement using the Euclidian norm
+**averageFrequencyGyroscopeMagnitude**
+average of the means of the Fast Fourier Transform of the magnitude of the gyroscope signal due to body movement calculated by the Euclidian norm
+**averageFrequencyGyroscopeJerkMagnitude**
+average of the means of the Fast Fourier Transform of the magnitude of the gyroscope jerk signal due to body movement calculated by the Euclidian norm
+**stDevTimeAccelerometerXAxis**
+average of the standard deviations of the time signal from the accelerometer due to body movement on the X axis
+**stDevTimeAccelerometerYAxis**
+average of the standard deviations of the time signal from the accelerometer due to body movement on the Y axis
+**stDevTimeAccelerometerZAxis**
+average of the standard deviations of the time signal from the accelerometer due to body movement on the Z axis
+**stDevTimeGravityAccelerometerXAxis**
+average of the standard deviations of the time signal from the accelerometer due to gravity on the X axis
+**stDevTimeGravityAccelerometerYAxis**
+average of the standard deviations of the time signal from the accelerometer due to gravity on the Y axis
+**stDevTimeGravityAccelerometerZAxis**
+average of the standard deviations of the time signal from the accelerometer due to gravity on the Z axis
+**stDevTimeAccelerometerJerkXAxis**
+average of the standard deviations of the jerk signal from the accelerometer due to body movement on the X axis
+**stDevTimeAccelerometerJerkYAxis**
+average of the standard deviations of the jerk signal from the accelerometer due to body movement on the Y axis
+**stDevTimeAccelerometerJerkZAxis**
+average of the standard deviations of the jerk signal from the accelerometer due to body movement on the Z axis
+**stDevTimeGyroscopeXAxis**
+average of the standard deviations of the time signal from the gyroscope due to body movement on the X axis
+**stDevTimeGyroscopeYAxis**
+average of the standard deviations of the time signal from the gyroscope due to body movement on the Y axis
+**stDevTimeGyroscopeZAxis**
+average of the standard deviations of the time signal from the gyroscope due to body movement on the Z axis
+**stDevTimeGyroscopeJerkXAxis**
+average of the standard deviations of the jerk signal fom the gyroscope due to body movement on the X axis
+**stDevTimeGyroscopeJerkYAxis**
+average of the standard deviations of the jerk signal fom the gyroscope due to body movement on the Y axis
+**stDevTimeGyroscopeJerkZAxis**
+average of the standard deviations of the jerk signal fom the gyroscope due to body movement on the Z axis
+**stDevTimeAccelerometerMagnitude**
+average of the standard deviations of the magnitude of the accelerometer signal due to body movement calculated by the Euclidian norm
+**stDevTimeGravityAccelerometerMagnitude**
+average of the standard deviations of the magnitude of the signal from the accelerometer due to gravity calculated by the Euclidian norm
+**stDevTimeAccelerometerJerkMagnitude**
+average of the standard deviations of the magnitude of the accelerometer jerk signal due to body movement using the Euclidian norm
+**stDevTimeGyroscopeMagnitude**
+average of the standard deviations of the magnitude of the gyroscope signal due to body movement calculated by the Euclidian norm
+**stDevTimeGyroscopeJerkMagnitude**
+average of the standard deviations of the magnitude of the gyroscope jerk signal due to body movement calculated by the Euclidian norm
+**stDevFrequencyAccelerometerXAxis**
+average of the standard deviations of the Fast Fourier Transform of the time signal from the accelerometer due to body movement on the X axis
+**stDevFrequencyAccelerometerYAxis**
+average of the standard deviations of the Fast Fourier Transform of the time signal from the accelerometer due to body movement on the Y axis
+**stDevFrequencyAccelerometerZAxis**
+average of the standard deviations of the Fast Fourier Transform of the time signal from the accelerometer due to body movement on the Z axis
+**stDevFrequencyAccelerometerJerkXAxis**
+average of the standard deviations of the Fast Fourier Transform of the jerk signal from the accelerometer due to body movement on the X axis
+**stDevFrequencyAccelerometerJerkYAxis**
+average of the standard deviations of the Fast Fourier Transform of the jerk signal from the accelerometer due to body movement on the Y axis
+**stDevFrequencyAccelerometerJerkZAxis**
+average of the standard deviations of the Fast Fourier Transform of the jerk signal from the accelerometer due to body movement on the Z axis
+**stDevFrequencyGyroscopeXAxis**
+average of the standard deviations of the Fast Fourier Transform of the time signal from the gyroscope due to body movement on the X axis
+**stDevFrequencyGyroscopeYAxis**
+average of the standard deviations of the Fast Fourier Transform of the time signal from the gyroscope due to body movement on the Y axis
+**stDevFrequencyGyroscopeZAxis**
+average of the standard deviations of the Fast Fourier Transform of the time signal from the gyroscope due to body movement on the Z axis
+**stDevFrequencyAccelerometerMagnitude**
+average of the standard deviations of the Fast Fourier Transform of the magnitude of the accelerometer signal due to body movement calculated by the Euclidian norm
+**stDevFrequencyAccelerometerJerkMagnitude**
+average of the standard deviations of the Fast Fourier Transform of the magnitude of the accelerometer jerk signal due to body movement using the Euclidian norm
+**stDevFrequencyGyroscopeMagnitude**
+average of the standard deviations of the Fast Fourier Transform of the magnitude of the gyroscope signal due to body movement calculated by the Euclidian norm
+**stDevFrequencyGyroscopeJerkMagnitude**
+average of the standard deviations of the Fast Fourier Transform of the magnitude of the gyroscope jerk signal due to body movement calculated by the Euclidian norm
+
