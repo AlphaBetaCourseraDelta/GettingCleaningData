@@ -6,7 +6,7 @@ Detailed information about the initial data set can be found [at the UCI Machine
 
 This script takes the first level of data, puts it all together, makes some of it more descriptive by using English words rather than code numbers, and labels it.  In this analysis, the data is further reduced to just the mean and standard deviation variables (identified by the presence of "mean()" and "std()").  The script finally produces a file called "outputdata.txt" that contains the averages of the selected variables by test subject and activity.
 
-run_analysis.R assumes that the dplyr and plyr packages have been installed.  It also assumes that the folder **UCI HAR Dataset** will be in the working directory.  It should contain the following files and folders:
+run_analysis.R assumes that the dplyr and plyr packages have been installed and loaded.  It also assumes that the folder **UCI HAR Dataset** will be in the working directory.  It should contain the following files and folders:
 * features.txt
 * activity_labels.txt
 * **test**
